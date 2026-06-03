@@ -214,7 +214,7 @@ const PRODUCTS_DATA = [
     id: 14, name: "LUMINAIR", category: "woody",
     notes: "Fresh · Citrus · Nature",
     price: 100000, badge: null, color: "#ffffff",
-    img: "asset/product/luminair.png",
+    img: "asset/product/luminairr.png",
     desc: "Luminair is the type of fragrance that makes people feel comfortable when they are near you.",
     sizes: [
       { label:"10ml", price: 100000 },
