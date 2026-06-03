@@ -9,7 +9,7 @@
   <title>SHEMPARFUM</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css"/>
-
+  <link rel="stylesheet" href="chatbot.css" />
 </head>
 <body>
 
@@ -35,10 +35,6 @@
   </div>
 </nav>
 
-<div>
-  <p class=""></p>
-</div>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
@@ -46,7 +42,7 @@
     <h1 class="hero-title">SHEM<br><em>PARFUM</em></h1>
     <p class="hero-desc">Extrait de parfume for modern profesionals.</p>
     <div class="hero-actions">
-      <a href="#produk" class="btn-primary">View Collection →</a>
+      <a href="#produk" class="btn-primary">View Collection ?</a>
       <a href="#tentang" class="btn-outline">About Us</a>
     </div>
   </div>
@@ -79,26 +75,12 @@
 <!-- STORY -->
 <section class="story-section" id="tentang">
   <div class="story-visual">
-    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="240" height="240">
-      <circle cx="150" cy="150" r="100" fill="none" stroke="#b89a6a" stroke-width="0.5"/>
-      <circle cx="150" cy="150" r="70" fill="none" stroke="rgba(184,154,106,0.4)" stroke-width="0.5"/>
-      <!-- decorative petals -->
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(0,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(45,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(90,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(135,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(180,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(225,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(270,150,150)"/>
-      <ellipse cx="150" cy="80" rx="18" ry="35" fill="rgba(184,154,106,0.18)" transform="rotate(315,150,150)"/>
-      <circle cx="150" cy="150" r="22" fill="rgba(184,154,106,0.3)"/>
-      <circle cx="150" cy="150" r="10" fill="#b89a6a"/>
-    </svg>
+    <img src="asset/boooth.png" alt="SHEM Parfum" class="story-logo-img" />
   </div>
   <div class="story-text">
     <p class="story-eyebrow">Our Story</p>
     <h2 class="story-title">Smells Like Success.
-    <p class="story-desc">SHEMParfum was born from a passion for the art of fragrance. We believe everyone has a unique story and character, and perfume is a subtle way to express it. With high-quality ingredients and an elegant touch, every SHEM scent is designed to accompany your journey—leaving a warm, confident, and unforgettable impression</p>
+    <p class="story-desc">SHEMParfum was born from a passion for the art of fragrance. We believe everyone has a unique story and character, and perfume is a subtle way to express it. With high-quality ingredients and an elegant touch, every SHEM scent is designed to accompany your journey�leaving a warm, confident, and unforgettable impression</p>
     <a href="#kontak" class="btn-outline" style="color:white; border-color:rgba(255,255,255,0.4); width:fit-content;">Contact Us</a>
   </div>
 </section>
@@ -124,7 +106,7 @@
 <div class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
     <h2 class="cart-title">Cart</h2>
-    <button class="cart-close" onclick="toggleCart()">✕</button>
+    <button class="cart-close" onclick="toggleCart()">x</button>
   </div>
   <div class="cart-items" id="cartItems">
     <div class="cart-empty" id="cartEmpty" style="display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
@@ -137,14 +119,14 @@
       <span class="cart-total-label">Total</span>
       <span class="cart-total-amount" id="cartTotal">Rp 0</span>
     </div>
-    <button class="checkout-btn" onclick="handleCheckout()">Go to checkout →</button>
+    <button class="checkout-btn" onclick="handleCheckout()">Go to checkout ?</button>
   </div>
 </div>
 
 <!-- PRODUCT MODAL -->
 <div class="modal-overlay" id="productModal" onclick="handleModalClick(event)">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+    <button class="modal-close" onclick="closeModal()">x</button>
     <div class="modal-inner">
 
       <div class="modal-left">
@@ -171,8 +153,8 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-add-cart" id="modalAddCart">+ Keranjang</button>
-          <button class="modal-buy" id="modalBuy">Beli →</button>
+          <button class="modal-add-cart" id="modalAddCart">+ CART</button>
+          <button class="modal-buy" id="modalBuy">BUY</button>
         </div>
       </div>
 
@@ -183,44 +165,46 @@
 <!-- MARKETPLACE MODAL -->
 <div class="market-overlay" id="marketModal">
   <div class="market-box">
-    <button type="button" class="market-close" id="marketCloseBtn">✕</button>
-    <p class="market-eyebrow">Beli Sekarang</p>
+    <button type="button" class="market-close" id="marketCloseBtn">x</button>
+    <p class="market-eyebrow">Order Now</p>
     <h3 class="market-title" id="marketProductName"></h3>
-    <p class="market-subtitle">Pilih marketplace favoritmu</p>
+    <p class="market-subtitle">Choose your preferred marketplace.</p>
 
     <div class="market-list">
   <!-- Beli di website -->
   <div class="market-item website" onclick="buyOnWebsite()">
-    <span class="market-icon">🛍️</span>
     <div class="market-item-text">
-      <span class="market-item-label">Beli di Website</span>
-      <span class="market-item-sub">Tambah ke keranjang sekarang</span>
+      <div style="display:flex; align-items:center; gap:8px;">
+  <span class="market-item-label">Buy on Website</span>
+  <span class="market-sale-badge" style="display:inline-flex; align-items:center;">SALE</span>
+</div>
+        <span class="market-item-sub">Add to Cart</span>
     </div>
   </div>
 
   <div class="market-divider">atau beli di marketplace</div>
 
   <a id="linkShopee" href="#" target="_blank" rel="noopener" class="market-item shopee">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopee_logo.svg/960px-Shopee_logo.svg.png" alt="Shopee" />
     <div class="market-item-text">
       <span class="market-item-label">Shopee</span>
-      <span class="market-item-sub">Klik untuk ke toko Shopee</span>
+      <span class="market-item-sub">Click to open the Shopee store.</span>
     </div>
   </a>
 
   <a id="linkTokopedia" href="#" target="_blank" rel="noopener" class="market-item tokopedia">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Tokopedia_New_Logo.png" alt="Tokopedia" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Toped_2018-05.png/960px-Toped_2018-05.png" alt="Tokopedia" />
     <div class="market-item-text">
       <span class="market-item-label">Tokopedia</span>
-      <span class="market-item-sub">Klik untuk ke toko Tokopedia</span>
+      <span class="market-item-sub">Click to open the Tokopedia store.</span>
     </div>
   </a>
 
   <a id="linkTiktok" href="#" target="_blank" rel="noopener" class="market-item tiktok">
-    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok Shop" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/960px-Tiktok_icon.svg.png" alt="TikTok Shop" />
     <div class="market-item-text">
       <span class="market-item-label">TikTok Shop</span>
-      <span class="market-item-sub">Klik untuk ke TikTok Shop</span>
+      <span class="market-item-sub">Click to open the TikTok Shop.</span>
     </div>
   </a>
 
@@ -250,15 +234,13 @@
       <h4>Help</h4>
       <ul>
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">Shipping</a></li>
-        <li><a href="#">Returns</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="mailto:info@shemparfum.com">info@shemparfum.com</a></li>
-        <li><a href="#">WhatsApp</a></li> 
+        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=shem.parfum@gmail.com">shem.parfum@gmail.com</a></li>
+        <li><a href="https://wa.me/628132261796" target="_blank">WhatsApp</a></li> 
         <li><a href="https://www.instagram.com/shem.parfum?igsh=MXZhMnQ0ODZ5YjU2eQ==">Instagram</a></li>
         <li><a href="https://www.tiktok.com/@shem.parfum?_r=1&_t=ZS-95nqzNrZ4US">TikTok</a></li>
         <li><a href="https://shopee.co.id/shem_parfum">Shopee</a></li>
@@ -277,7 +259,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 SHEMPARFUM. All rights reserved.</span>
+    <span>� 2025 SHEMPARFUM. All rights reserved.</span>
     <span>SMELL LIKE SUCCESS.</span>
   </div>
 </footer>
@@ -286,6 +268,7 @@
 <div class="toast" id="toast"></div>
 
   <script src="script.js" defer></script>
-
+  <script src="chatbot.js"></script>
+  <script src="animations.js"></script>
 </body>
 </html>
