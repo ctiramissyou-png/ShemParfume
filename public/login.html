@@ -1,0 +1,391 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>SHEM Parfum - Smell Like Success</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+
+    </head>
+
+    <body>
+
+    <main class="parfum-app">
+
+        <!-- BRAND -->
+        <header class="brand-logo">
+
+        <h1 class="brand-name">
+            SHEM
+        </h1>
+
+        <p class="brand-tagline">
+            Smell Like Success
+        </p>
+
+        </header>
+
+        <!-- ================= SIGN IN ================= -->
+        <section id="screen-signin" class="screen">
+
+        <div class="screen-header">
+
+            <span class="brand-accent">
+            SHEM
+            </span>
+
+            <h2 class="screen-title">
+            Sign In
+            </h2>
+
+            <p class="screen-sub">
+            Your signature scent awaits
+            </p>
+
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm">
+
+            <!-- EMAIL -->
+            <div class="field-group">
+
+            <label for="signin-email" class="field-label">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="signin-email"
+                class="field-input"
+                placeholder="example@email.com"
+                required
+            >
+
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="field-group">
+
+            <label for="signin-password" class="field-label">
+                Password
+            </label>
+
+            <div class="field-input-row">
+
+                <input
+                type="password"
+                id="signin-password"
+                class="field-input"
+                placeholder="••••••••"
+                required
+                >
+
+                <button
+                type="button"
+                class="eye-btn"
+                data-target="signin-password"
+                aria-label="Toggle password"
+                >
+                👁
+                </button>
+
+            </div>
+
+            <p class="forgot-link">
+                Forgot password?
+            </p>
+
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" class="cta-btn">
+            Sign In
+            </button>
+
+        </form>
+
+        <!-- SOCIAL -->
+        <div class="divider-row">
+
+            <div class="divider-line"></div>
+
+            <span class="divider-text">
+            or sign in with
+            </span>
+
+            <div class="divider-line"></div>
+
+        </div>
+
+        <div class="social-row">
+            <button class="social-btn">G</button>
+            <button class="social-btn">☎</button>
+        </div>
+
+        <!-- LINK -->
+        <p class="bottom-link">
+
+            Don’t have an account?
+
+            <span data-screen="register">
+            Sign Up
+            </span>
+
+        </p>
+
+        <div class="home-indicator"></div>
+
+        </section>
+
+        <!-- ================= REGISTER ================= -->
+        <section
+        id="screen-register"
+        class="screen screen-hidden"
+        >
+
+        <div class="screen-header">
+
+            <h2 class="screen-title">
+            Create Account
+            </h2>
+
+            <p class="screen-sub">
+            Begin your olfactory journey
+            </p>
+
+        </div>
+
+        <!-- REGISTER FORM -->
+        <form id="registerForm">
+
+            <!-- NAME -->
+            <div class="field-group">
+
+            <label for="reg-name" class="field-label">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="reg-name"
+                class="field-input"
+                placeholder="Jean Pierre"
+                required
+            >
+
+            </div>
+
+            <!-- EMAIL -->
+            <div class="field-group">
+
+            <label for="reg-email" class="field-label">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="reg-email"
+                class="field-input"
+                placeholder="example@email.com"
+                required
+            >
+
+            </div>
+
+            <!-- PHONE -->
+            <div class="field-group">
+
+            <label for="reg-phone" class="field-label">
+                Phone Number
+            </label>
+
+            <div class="phone-input-row">
+
+                <input
+                type="text"
+                class="phone-prefix"
+                value="+62"
+                readonly
+                >
+
+                <input
+                type="tel"
+                id="reg-phone"
+                class="phone-number"
+                placeholder="812 3456 7890"
+                required
+                >
+
+            </div>
+
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="field-group">
+
+            <label for="reg-password" class="field-label">
+                Password
+            </label>
+
+            <div class="field-input-row">
+
+                <input
+                type="password"
+                id="reg-password"
+                class="field-input"
+                placeholder="••••••••"
+                required
+                >
+
+                <button
+                type="button"
+                class="eye-btn"
+                data-target="reg-password"
+                >
+                👁
+                </button>
+
+            </div>
+
+            </div>
+
+            <!-- TERMS -->
+            <div class="terms-row">
+
+            <input
+                type="checkbox"
+                id="terms"
+                required
+            >
+
+            <label for="terms" class="terms-text">
+
+                I agree to the
+
+                <span>
+                Terms & Conditions
+                </span>
+
+                and
+
+                <span>
+                Privacy Policy
+                </span>
+
+            </label>
+
+            </div>
+
+            <!-- BUTTON -->
+            <button
+            type="submit"
+            class="cta-btn"
+            data-goto="verify"
+            >
+            Sign Up
+            </button>
+
+        </form>
+
+        <!-- LINK -->
+        <p class="bottom-link">
+
+            Already have an account?
+
+            <span data-screen="signin">
+            Sign In
+            </span>
+
+        </p>
+
+        <div class="home-indicator"></div>
+
+        </section>
+
+        <!-- ================= VERIFY ================= -->
+        <section
+        id="screen-verify"
+        class="screen screen-hidden"
+        >
+
+        <button
+            class="back-btn"
+            data-screen="register"
+            aria-label="Back"
+        >
+            ←
+        </button>
+
+        <div class="screen-header">
+
+            <span class="brand-accent">
+            Verification
+            </span>
+
+            <h2 class="screen-title">
+            Verify Code
+            </h2>
+
+            <p class="screen-sub">
+
+            Code sent to
+
+            <br>
+
+            <span class="otp-phone">
+                +62 812 3456 7890
+            </span>
+
+            </p>
+
+        </div>
+
+        <!-- OTP -->
+        <div class="otp-row">
+
+            <input class="otp-box" maxlength="1">
+            <input class="otp-box" maxlength="1">
+            <input class="otp-box" maxlength="1">
+            <input class="otp-box" maxlength="1">
+
+        </div>
+
+        <p class="resend-row">
+
+            Didn’t receive OTP?
+
+            <span>
+            Resend code
+            </span>
+
+        </p>
+
+        <button class="cta-btn">
+            Verify
+        </button>
+
+        <div class="home-indicator"></div>
+
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="login.js"></script>
+
+    </body>
+    </html>
