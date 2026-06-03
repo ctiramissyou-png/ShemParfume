@@ -5,10 +5,13 @@ const PRODUCTS_DATA = [
   {
     id: 1, name: "PEACE OF MIND", category: "fresh",
     notes: "Fresh · Calm · Comforting",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/peaceofmind.png",
-    desc: "Ini tipe parfum yang bikin kamu terasa lebih rapi, lebih tenang, dan lebih confident tanpa berusaha terlalu keras. Kalau kamu suka wangi fresh tapi tetap hangat dan dewasa — Peace of Mind siap jadi comfort scent kamu.",
-    sizes: ["10ml","55ml"],
+    desc: "This is the kind of fragrance that makes you feel more polished, calmer, and more confident without trying too hard. If you love fresh scents that still feel warm and mature — Peace of Mind is ready to become your comfort scent.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://shopee.co.id/SHEM-PARFUM-PEACE-OF-MIND-i.42480258.29217791856?extraParams=%7B%22display_model_id%22%3A325586559973%2C%22model_selection_logic%22%3A3%7D",
       tokopedia: "https://tk.tokopedia.com/ZS9vFVMnX",
@@ -18,10 +21,13 @@ const PRODUCTS_DATA = [
   {
     id: 2, name: "VELVET BLOOM", category: "floral",
     notes: "Soft · Sweet · Irresistible",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/velvetbloom.png",
-    desc: "Velvet Bloom adalah tipe wangi yang bikin orang bertanya, \"Pakai parfum apa sih?\".",
-    sizes: ["10ml","55ml"],
+    desc: "Velvet Bloom is the kind of fragrance that makes people ask, ‘What perfume are you wearing?’",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/1gZ1EjuT",
       tokopedia: "https://tk.tokopedia.com/ZS9vFq7SP/",
@@ -31,10 +37,13 @@ const PRODUCTS_DATA = [
   {
     id: 3, name: "TOBACCO ROYALE", category: "woody",
     notes: "Warm · Sweet · Powerful",
-    price: 350000, badge: "new", color: "#ffffff",
+    price: 100000, badge: "new", color: "#ffffff",
     img: "asset/product/tobaccoroyale.png",
-    desc: "Bayangkan aroma tembakau yang hangat, elegan, dan mahal. Bukan bau rokok — tapi wangi tobacco yang smooth dan classy. Ini tipe parfum yang bikin kamu terasa lebih berwibawa dan berkelas. Kalau kamu suka wangi hangat, manis, dan powerful — Tobacco Royale siap bikin kamu makin standout.",
-    sizes: ["10ml","55ml"],
+    desc: "Imagine a tobacco scent that feels warm, elegant, and luxurious. Not the smell of cigarettes — but a smooth and classy tobacco fragrance. This is the kind of perfume that makes you feel more authoritative and sophisticated.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/eUGi2ikH",
       tokopedia: "https://tk.tokopedia.com/ZS9vFqSU4/",
@@ -44,10 +53,13 @@ const PRODUCTS_DATA = [
   {
     id: 4, name: "GREEN ENCHANTMENT", category: "fresh",
     notes: "Clean · Fresh · Powerful",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/greenenchantment.png",
-    desc: "Ini tipe parfum yang bikin orang bilang: \"Wanginya enak banget, bersih ya.\" Kalau kamu suka wangi yang ringan, seger, dan bikin mood naik. Green Enchantment by SHEM wajib kamu punya.",
-    sizes: ["10ml", "55ml"],
+    desc: "This is the kind of fragrance that makes people say: ‘Your scent is so good, it’s clean.’ If you love light, fresh scents that boost your mood — Green Enchantment by SHEM is a must-have.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/55DDMRmL",
       tokopedia: "https://tk.tokopedia.com/ZS9vFqyjc/",
@@ -57,10 +69,13 @@ const PRODUCTS_DATA = [
   {
     id: 5, name: "SCENT OF AMBITION", category: "oriental",
     notes: "Oud · Rose · Patchouli",
-    price: 350000, badge: "new", color: "#ffffff",
+    price: 100000, badge: "new", color: "#ffffff",
     img: "asset/product/scentofambition.png",
-    desc: "Scent of Ambition adalah pernyataan diri yang berani. Perpaduan Oud yang mewah, Rose yang romantis, dan Patchouli yang hangat menciptakan komposisi oriental yang kompleks dan penuh karakter. Untuk mereka yang tak takut bermimpi besar.",
-    sizes: ["10ml", "55ml"],
+    desc: "Scent of Ambition is a bold statement of self. The luxurious blend of Oud, romantic Rose, and warm Patchouli creates a complex and character-rich oriental composition. For those who aren't afraid to dream big.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/iGhrjZ89",
       tokopedia: "https://tk.tokopedia.com/ZS9vFDCQJ/",
@@ -70,10 +85,13 @@ const PRODUCTS_DATA = [
   {
     id: 6, name: "SPREAD LOVE", category: "floral",
     notes: "Pure · Elegant · Addictive",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/SPREADLOVE.png",
-    desc: "Spread Love adalah wangi untuk kamu yang ingin terlihat lembut, tapi tetap punya karakter kuat. Bersih. Berkelas. Bikin orang ingin lebih dekat.",
-    sizes: ["10ml","55ml"],
+    desc: "Spread Love is the fragrance for you who wants to look gentle, but still has a strong character. Clean. Elegant. Makes people want to get closer.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/MmtQXsLe",
       tokopedia: "https://tk.tokopedia.com/ZS9vFXMGX/",
@@ -83,10 +101,13 @@ const PRODUCTS_DATA = [
   {
     id: 7, name: "WOODED NECTAR", category: "woody",
     notes: "Amberwood · Patchouli · Oakmoss",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/wooddednectar.png",
-    desc: "Wooded Nectar adalah perpaduan unik antara manis yang lembut dan kayu yang elegan. Bukan manis yang childish, tapi manis yang dalam, hangat, dan sophisticated. Ini tipe wangi yang bikin orang bilang: \"Wanginya beda ya, enak banget.\"",
-    sizes: ["10ml", "55ml"],
+    desc: "Wooded Nectar is a unique blend between a gentle sweetness and elegant wood notes. Not a childish sweetness, but a deep, warm, and sophisticated fragrance. This is the type of scent that makes people say: \"Your fragrance is different, really nice.\"",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/tQqbw83f",
       tokopedia: "https://tk.tokopedia.com/ZS9vFHdQD/",
@@ -96,10 +117,13 @@ const PRODUCTS_DATA = [
   {
     id: 8, name: "FREESIA LAGOON", category: "fresh",
     notes: "Fresh · Sweet · Elegant",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/freesialagoon.png",
-    desc: "Bayangkan kamu lagi di tepi laut, angin sepoi-sepoi, matahari hangat tapi nggak menyengat. Segar, tenang, tapi tetap feminin. Itu vibe dari Freesia Lagoon. Ini tipe wangi yang bikin orang merasa kamu itu cerah, ramah, dan easy to love.",
-    sizes: ["10ml","55ml"],
+    desc: "Imagine you're at the seaside, with a gentle breeze and a warm, non-blazing sun. Fresh, calm, yet still feminine. That's the vibe of Freesia Lagoon. This is the kind of fragrance that makes people feel that you're bright, friendly, and easy to love.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/6QY5zstf",
       tokopedia: "https://tk.tokopedia.com/ZS9vFQ4Mo/",
@@ -109,10 +133,13 @@ const PRODUCTS_DATA = [
   {
     id: 9, name: "ENERGIQUE BREEZE", category: "fresh",
     notes: "Fresh · Clean · Powerful",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/energiquebreeze.png",
-    desc: "Bayangkan aroma citrus segar dari grapefruit dan lemon yang langsung bikin semangat. Ditambah sedikit mint dan pink pepper, ada sensasi fresh yang adem tapi tetap berkarakter.",
-    sizes: ["10ml","55ml"],
+    desc: "Imagine the fresh citrus aroma of grapefruit and lemon that instantly boosts your energy. With a hint of mint and pink pepper, it offers a refreshing sensation that remains characterful.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/fVq78ywG",
       tokopedia: "https://tk.tokopedia.com/ZS9vFS712/",
@@ -122,10 +149,13 @@ const PRODUCTS_DATA = [
   {
     id: 10, name: "SPICE OF THE SEA", category: "woody",
     notes: "Fresh · Salty · Mysterious",
-    price: 350000, badge: null, color: "#ffffff",
+    price: 100000, badge: null, color: "#ffffff",
     img: "asset/product/spiceofthesea.png",
-    desc: "Bayangkan angin laut sore hari. Segar, sedikit asin, tapi hangat di kulit. Ini tipe parfum yang bikin orang merasa kamu tenang, tapi punya kedalaman. Kalau kamu suka aroma laut yang elegan dan beda dari yang lain — Spice of the Sea wajib kamu coba.",
-    sizes: ["10ml","55ml"],
+    desc: "Imagine the gentle sea breeze on a warm evening. Fresh, slightly salty, but warm on the skin. This is the type of fragrance that makes people feel at ease, yet has depth. If you love the elegant scent of the sea that stands out from the rest — Spice of the Sea is a must-try.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/QtTbSbKV",
       tokopedia: "https://tk.tokopedia.com/ZS9vFxAYx/",
@@ -135,10 +165,13 @@ const PRODUCTS_DATA = [
   {
     id: 11, name: "SERENITY", category: "woody",
     notes: "Fresh · Calm · Soft",
-    price: 350000, badge: null, color: "#ffffff",
-    img: "asset/hehehe.png",
-    desc: "Serenity bukan tentang menarik perhatian, tapi tentang membuat orang nyaman.",
-    sizes: ["10ml", "55ml"],
+    price: 100000, badge: null, color: "#ffffff",
+    img: "asset/product/serenity.png",
+    desc: "Serenity is not about drawing attention, but about making people comfortable.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/C29Vzec9",
       tokopedia: "",
@@ -148,10 +181,13 @@ const PRODUCTS_DATA = [
   {
     id: 12, name: "BLOOMSCAPE", category: "woody",
     notes: "",
-    price: 350000, badge: null, color: "#ffffff",
-    img: "asset/hehehe.png",
-    desc: "Bloomscape bukan tentang menarik perhatian, tapi tentang membuat orang pelan-pelan jatuh suka.",
-    sizes: ["10ml","55ml"],
+    price: 100000, badge: null, color: "#ffffff",
+    img: "asset/product/bloomscape.png",
+    desc: "Bloomscape is not about drawing attention, but about making people slowly fall in love.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+      ],
     marketplace: {
       shopee:    "https://id.shp.ee/QmwqLmry",
       tokopedia: "",
@@ -161,10 +197,13 @@ const PRODUCTS_DATA = [
   {
     id: 13, name: "MOKSA", category: "woody",
     notes: "Fresh · Floral · Nature",
-    price: 350000, badge: null, color: "#ffffff",
-    img: "asset/hehehe.png",
-    desc: "Moksa adalah wangi untuk mereka yang tau, kekuatan sejati tidak selalu bersuara keras.",
-    sizes: ["10ml","55ml"],
+    price: 100000, badge: null, color: "#ffffff",
+    img: "asset/product/moksa.png",
+    desc: "Moksa is the fragrance for those who know, true strength does not always roar loudly.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/P8MxBTdg",
       tokopedia: "",
@@ -174,10 +213,13 @@ const PRODUCTS_DATA = [
   {
     id: 14, name: "LUMINAIR", category: "woody",
     notes: "Fresh · Citrus · Nature",
-    price: 350000, badge: null, color: "#ffffff",
-    img: "asset/hehehe.png",
-    desc: "Luminair adalah tipe parfum yang bikin orang merasa nyaman saat dekat kamu.",
-    sizes: ["10ml", "55ml"],
+    price: 100000, badge: null, color: "#ffffff",
+    img: "asset/product/luminair.png",
+    desc: "Luminair is the type of fragrance that makes people feel comfortable when they are near you.",
+    sizes: [
+      { label:"10ml", price: 100000 },
+      { label:"55ml", price: 350000 }
+    ],
     marketplace: {
       shopee:    "https://id.shp.ee/bwxQ42Ug",
       tokopedia: "",
@@ -240,7 +282,7 @@ function renderProducts(products) {
             ${p.originalPrice ? `<span class="original">Rp ${p.originalPrice.toLocaleString("id-ID")}</span>` : ""}
             Rp ${p.price.toLocaleString("id-ID")}
           </div>
-          <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(${p.id})" title="Tambah ke keranjang">+</button>
+          <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(${p.id})" title="add to cart!">+</button>
         </div>
       </div>
     </div>
@@ -255,6 +297,7 @@ function filterProducts(cat, btn) {
     ? PRODUCTS_DATA
     : PRODUCTS_DATA.filter(p => p.category.toLowerCase() === cat.toLowerCase());
   renderProducts(filtered);
+  if (typeof reObserveProducts === "function") reObserveProducts(); // Re-observe untuk animasi
 }
 
 // ─────────────────────────────────────────────
@@ -286,33 +329,64 @@ function openModal(productId) {
   buyBtn.disabled = true;
   buyBtn.classList.add('btn-disabled');
 
-  (p.sizes || []).forEach(function(size) {
-    var btn = document.createElement('button');
-    btn.className = 'size-btn';
-    btn.textContent = size;
-    btn.addEventListener('click', function() {
-      sizesEl.querySelectorAll('.size-btn').forEach(function(b) {
-        b.classList.remove('active');
-      });
-      btn.classList.add('active');
-      buyBtn.disabled = false;
-      buyBtn.classList.remove('btn-disabled');
-    });
-    sizesEl.appendChild(btn);
-  });
+  // Track harga yang dipilih
+var selectedPrice = p.sizes && p.sizes.length === 1 ? p.sizes[0].price : null;
 
-  // Jika hanya 1 ukuran, langsung aktifkan tombol beli
-  if (p.sizes && p.sizes.length === 1) {
-    sizesEl.querySelector('.size-btn').classList.add('active');
+(p.sizes || []).forEach(function(size) {
+  var btn = document.createElement('button');
+  btn.className = 'size-btn';
+  btn.textContent = size.label;
+  btn.addEventListener('click', function() {
+    sizesEl.querySelectorAll('.size-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+    selectedPrice = size.price;
+
+    // Update harga di modal
+    document.getElementById('modalPrice').textContent = 'Rp ' + size.price.toLocaleString('id-ID');
+
+    // Aktifkan tombol
     buyBtn.disabled = false;
     buyBtn.classList.remove('btn-disabled');
-  }
+    addCartBtn.disabled = false;
+    addCartBtn.classList.remove('btn-disabled');
+  });
+  sizesEl.appendChild(btn);
+});
 
-  // Tombol + Keranjang
-  document.getElementById('modalAddCart').onclick = function() {
-    addToCart(p.id);
-    closeModal();
-  };
+// Jika hanya 1 ukuran, langsung aktifkan
+if (p.sizes && p.sizes.length === 1) {
+  sizesEl.querySelector('.size-btn').classList.add('active');
+  document.getElementById('modalPrice').textContent = 'Rp ' + p.sizes[0].price.toLocaleString('id-ID');
+  buyBtn.disabled = false;
+  buyBtn.classList.remove('btn-disabled');
+  addCartBtn.disabled = false;
+  addCartBtn.classList.remove('btn-disabled');
+}
+
+  var addCartBtn = document.getElementById('modalAddCart');
+
+// Nonaktifkan + Keranjang juga jika lebih dari 1 ukuran
+if (p.sizes && p.sizes.length > 1) {
+  addCartBtn.disabled = true;
+  addCartBtn.classList.add('btn-disabled');
+} else {
+  addCartBtn.disabled = false;
+  addCartBtn.classList.remove('btn-disabled');
+}
+
+addCartBtn.onclick = function() {
+  if (addCartBtn.disabled) return;
+  addToCart(p.id, selectedPrice);
+  closeModal();
+};
+
+buyBtn.onclick = function() {
+  if (buyBtn.disabled) return;
+  closeModal();
+  openMarketModal(p.name, p.marketplace, p.id, selectedPrice);
+};
 
   // Tombol Beli → buka marketplace modal
   buyBtn.onclick = function() {
@@ -379,17 +453,24 @@ window.addEventListener('load', function() {
 // ─────────────────────────────────────────────
 // CART
 // ─────────────────────────────────────────────
-function addToCart(productId) {
+function addToCart(productId, selectedPrice) {
   const product = PRODUCTS_DATA.find(p => p.id === productId);
   if (!product) return;
-  const existing = cart.find(c => c.id === productId);
+
+  // Gunakan harga yang dipilih, fallback ke harga default
+  const finalPrice = selectedPrice || product.price;
+
+  // Cart key gabungkan id + harga supaya 10ml & 55ml dianggap item berbeda
+  const cartKey = productId + '_' + finalPrice;
+  const existing = cart.find(c => c.cartKey === cartKey);
+
   if (existing) {
     existing.qty += 1;
   } else {
-    cart.push({ ...product, qty: 1 });
+    cart.push({ ...product, price: finalPrice, cartKey: cartKey, qty: 1 });
   }
   updateCartUI();
-  showToast(product.name + " ditambahkan ke keranjang!");
+  showToast(product.name + " added to cart!");
 }
 
 function updateQty(productId, delta) {
@@ -421,8 +502,12 @@ function updateCartUI() {
   cart.forEach(item => {
     const div = document.createElement("div");
     div.className = "cart-item";
-    div.innerHTML = `
-      <div class="cart-item-img">${bottleSVG(item.color)}</div>
+    div.innerHTML = `<div class="cart-item-img">
+      ${item.img
+      ? `<img src="${item.img}" alt="${item.name}" style="width:100%;height:100%;object-fit:contain;padding:4px;" />`
+      : bottleSVG(item.color)
+      }
+  </div>
       <div>
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-meta">Rp ${item.price.toLocaleString("id-ID")}</div>
@@ -444,8 +529,11 @@ function toggleCart() {
 }
 
 function handleCheckout() {
-  if (!cart.length) { showToast("Keranjang kosong!"); return; }
-  showToast("Menghubungkan ke pembayaran... (backend semangat ya sayang!!!!)");
+  if (!cart.length) { showToast("Cart is empty!"); return; }
+  
+  localStorage.setItem("shem_cart", JSON.stringify(cart));
+
+  window.location.href = "form.html";
 }
 
 // ─────────────────────────────────────────────
@@ -504,9 +592,7 @@ function loadIgFeed() {
   });
 }
 
-// ─────────────────────────────────────────────
-// TOAST
-// ─────────────────────────────────────────────
+
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -516,20 +602,6 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove("show"), 2800);
 }
 
-// ─────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────
 renderProducts(PRODUCTS_DATA);
 updateCartUI();
 loadIgFeed();
-
-/*
- * ──────────────────────────────────────────────────
- * CATATAN UNTUK BACKEND (teman lo):
- *
- * 1. Ganti PRODUCTS_DATA dengan fetch ke GET /api/products
- * 2. handleCheckout() → POST /api/orders dengan data cart
- * 3. Semua fungsi render, cart, dan filter tidak perlu diubah —
- *    cukup ganti data source di atas.
- * ──────────────────────────────────────────────────
- */
