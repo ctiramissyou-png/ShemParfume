@@ -592,7 +592,9 @@ function loadIgFeed() {
   });
 }
 
-
+// ─────────────────────────────────────────────
+// TOAST
+// ─────────────────────────────────────────────
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -602,6 +604,49 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove("show"), 2800);
 }
 
-renderProducts(PRODUCTS_DATA);
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+// ── Load produk dari backend ──
+async function loadProducts() {
+  try {
+    const res  = await fetch('api/products.php');
+    const data = await res.json();
+    if (data.success) {
+      renderProducts(data.products);
+    } else {
+      renderProducts(PRODUCTS_DATA); // fallback ke data lokal
+    }
+  } catch (err) {
+    console.error('Gagal load produk:', err);
+    renderProducts(PRODUCTS_DATA); // fallback ke data lokal
+  }
+}
+
+loadProducts();
 updateCartUI();
 loadIgFeed();
+
+// ── Cek status login di navbar ──
+  var shemUser = JSON.parse(localStorage.getItem('shem_user'));
+  var navLoginBtn = document.getElementById('navLoginBtn');
+  if (navLoginBtn) {
+    if (shemUser && shemUser.name) {
+      navLoginBtn.textContent = '👤 ' + shemUser.name.split(' ')[0];
+      navLoginBtn.href = 'profile.html';
+    } else {
+      navLoginBtn.textContent = 'Login';
+      navLoginBtn.href = 'login.html';
+    }
+  }
+
+/*
+ * ──────────────────────────────────────────────────
+ * CATATAN UNTUK BACKEND (teman lo):
+ *
+ * 1. Ganti PRODUCTS_DATA dengan fetch ke GET /api/products
+ * 2. handleCheckout() → POST /api/orders dengan data cart
+ * 3. Semua fungsi render, cart, dan filter tidak perlu diubah —
+ *    cukup ganti data source di atas.
+ * ──────────────────────────────────────────────────
+ */
