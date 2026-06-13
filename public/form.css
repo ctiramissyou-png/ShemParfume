@@ -652,3 +652,19 @@
       position: static;
     }
   }
+
+.voucher-chip {
+  display: inline-block;
+  background: #1a1612;
+  color: #f0e8d8;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 2px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+.voucher-chip:hover { background: #b89a6a; }
