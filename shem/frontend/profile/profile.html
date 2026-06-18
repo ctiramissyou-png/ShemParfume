@@ -57,7 +57,7 @@
         <div class="section-card">
             <div class="section-card-title">
             <span>👤 Account Information</span>
-            <button class="edit-btn">Edit Profile</button>
+            <button class="edit-btn" onclick="openEditProfile()">Edit Profile</button>
             </div>
             <div class="info-grid" id="profileInfo">
             <!-- Diisi oleh JS -->
@@ -68,6 +68,44 @@
     </div>
 
     <div class="toast" id="toast"></div>
+
+        <!-- EDIT PROFILE MODAL -->
+    <div class="edit-overlay" id="editProfileOverlay" onclick="handleEditClick(event)">
+    <div class="edit-box">
+        <button class="edit-close" onclick="closeEditProfile()">✕</button>
+        <h3 class="edit-title">Edit Profil</h3>
+        <p class="edit-subtitle">Perbarui informasi akun member kamu</p>
+
+        <div class="edit-form-group">
+        <label>Nama Lengkap</label>
+        <input class="edit-field" type="text" id="editName" placeholder="Nama kamu" />
+        </div>
+
+        <div class="edit-form-row">
+        <div class="edit-form-group">
+            <label>Tanggal Lahir</label>
+            <input class="edit-field" type="date" id="editDob" />
+        </div>
+        <div class="edit-form-group">
+            <label>No. HP</label>
+            <input class="edit-field" type="tel" id="editPhone" placeholder="08xxxxxxxxxx" />
+        </div>
+        </div>
+
+        <div class="edit-form-group">
+        <label>Email</label>
+        <input class="edit-field" type="email" id="editEmail" placeholder="email@example.com" />
+        </div>
+
+        <div class="edit-form-group">
+        <label>Alamat</label>
+        <input class="edit-field" type="text" id="editAddress" placeholder="Jl. Contoh No. 1, Kota" />
+        </div>
+
+        <button class="edit-save-btn" id="editSaveBtn" onclick="saveEditProfile()">Simpan Perubahan</button>
+    </div>
+    </div>
+
     <script src="profile.js"></script>
     </body>
     </html>
