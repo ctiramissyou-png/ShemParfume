@@ -62,13 +62,13 @@
 
         <nav>
         <ul id="sidebarMenu">
-            <li class="active" data-page="dashboard">Dashboard</li>
-            <li data-page="produk">Produk</li>
-            <li data-page="pesanan">Pesanan</li>
-            <li data-page="pelanggan">Pelanggan</li>
-            <li data-page="review">Review</li>
-            <li data-page="artikel">Artikel</li>
-            <li data-page="pengaturan">Pengaturan</li>
+            <li class="active" data-page="dashboard">📊 Dashboard</li>
+            <li data-page="produk">🧴 Produk</li>
+            <li data-page="pesanan">📦 Pesanan</li>
+            <li data-page="pelanggan">👤 Pelanggan</li>
+            <li data-page="review">⭐ Review</li>
+            <li data-page="artikel">📰 Artikel</li>
+            <li data-page="pengaturan">⚙️ Pengaturan</li>
         </ul>
         </nav>
 
@@ -200,7 +200,7 @@
             </div>
             <div class="table-scroll">
             <table>
-                <thead><tr><th>Nama</th><th>Email</th><th>No. HP</th><th>Bergabung</th></tr></thead>
+                <thead><tr><th>Nama</th><th>Email</th><th>No. HP</th><th>Bergabung</th><th>Riwayat</th></tr></thead>
                 <tbody id="pelangganTable"></tbody>
             </table>
             </div>
@@ -218,10 +218,15 @@
         <div class="table-box">
             <div class="table-header">
             <h3>Review Terbaru <span class="count-badge" id="reviewCount">0</span></h3>
+            <select class="filter-select" id="reviewFilter" onchange="renderReview()">
+                <option value="all">Semua</option>
+                <option value="visible">Tampil</option>
+                <option value="hidden">Disembunyikan</option>
+            </select>
             </div>
             <div class="table-scroll">
             <table>
-                <thead><tr><th>Pelanggan</th><th>Produk</th><th>Rating</th><th>Komentar</th></tr></thead>
+                <thead><tr><th>Pelanggan</th><th>Produk</th><th>Rating</th><th>Komentar</th><th>Balasan Admin</th><th>Status</th><th>Aksi</th></tr></thead>
                 <tbody id="reviewTable"></tbody>
             </table>
             </div>
