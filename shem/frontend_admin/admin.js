@@ -5,7 +5,7 @@
     // ══════════════════════════════════════════════
     // DEMO LOGIN (sementara, sebelum backend siap)
     // ══════════════════════════════════════════════
-    const DEMO_ADMIN = { email: 'shem.parfum@gmail.com', password: 'admin123' };
+    const DEMO_ADMIN = { email: 'shemparfum@gmail.com', password: 'admin123' };
 
     function toggleAdminPw() {
     var input = document.getElementById('adminPassword');
@@ -109,16 +109,16 @@
     { id: 'SHEM-004', customer: 'Vina Salsabila', items: [{ name: 'Tobacco Royale', qty: 1 }],                         total: 350000, payment: 'Bank', status: 'failed' },
     ];
 
-    const ADMIN_CUSTOMERS = [
-    { name: 'Ezra Wijaya Tama', email: 'ezrawijaya106@gmail.com', phone: '088214553358', joined: '12 Jun 2026' },
-    { name: 'Naya Putri',       email: 'naya.putri@gmail.com',    phone: '081234567890', joined: '10 Jun 2026' },
-    { name: 'Raka Aditya',      email: 'raka.aditya@gmail.com',   phone: '085678901234', joined: '05 Jun 2026' },
+    let ADMIN_CUSTOMERS = [
+    { id: 1, name: 'Ezra Wijaya Tama', email: 'ezrawijaya106@gmail.com', phone: '088214553358', joined: '12 Jun 2026' },
+    { id: 2, name: 'Naya Putri',       email: 'naya.putri@gmail.com',    phone: '081234567890', joined: '10 Jun 2026' },
+    { id: 3, name: 'Raka Aditya',      email: 'raka.aditya@gmail.com',   phone: '085678901234', joined: '05 Jun 2026' },
     ];
 
-    const ADMIN_REVIEWS = [
-    { customer: 'Piyann837', product: 'Velvet Bloom',   rating: 5, comment: 'Segar dan tahan lama, untuk dipakai daily enak banget.' },
-    { customer: 'Salsa_22',  product: 'Peace of Mind',  rating: 4, comment: 'Wanginya soft, cocok buat kerja.' },
-    { customer: 'mrizky.k',  product: 'Tobacco Royale', rating: 5, comment: 'Maskulin banget, jadi favorit!' },
+    let ADMIN_REVIEWS = [
+    { id: 1, customer: 'Piyann837', product: 'Velvet Bloom',   rating: 5, comment: 'Segar dan tahan lama, untuk dipakai daily enak banget.', reply: null, hidden: false },
+    { id: 2, customer: 'Salsa_22',  product: 'Peace of Mind',  rating: 4, comment: 'Wanginya soft, cocok buat kerja.', reply: null, hidden: false },
+    { id: 3, customer: 'mrizky.k',  product: 'Tobacco Royale', rating: 5, comment: 'Maskulin banget, jadi favorit!', reply: null, hidden: false },
     ];
 
     // ══════════════════════════════════════════════
@@ -447,8 +447,39 @@
     document.getElementById('pelangganCount').textContent = ADMIN_CUSTOMERS.length;
     var tbody = document.getElementById('pelangganTable');
     tbody.innerHTML = ADMIN_CUSTOMERS.map(function(c) {
-        return '<tr><td>' + c.name + '</td><td>' + c.email + '</td><td>' + c.phone + '</td><td>' + c.joined + '</td></tr>';
+        return '<tr>' +
+        '<td>' + c.name + '</td>' +
+        '<td>' + c.email + '</td>' +
+        '<td>' + c.phone + '</td>' +
+        '<td>' + c.joined + '</td>' +
+        '<td><button class="icon-btn" title="Lihat riwayat order" onclick="viewCustomerHistory(' + c.id + ')">📜</button></td>' +
+        '</tr>';
     }).join('');
+    }
+
+    function viewCustomerHistory(customerId) {
+    var c = ADMIN_CUSTOMERS.find(function(x) { return x.id === customerId; });
+    if (!c) return;
+
+    var orders = ADMIN_ORDERS.filter(function(o) { return o.customer === c.name; });
+    var statusLabel = { paid: 'Lunas', pending: 'Menunggu', failed: 'Gagal' };
+
+    var historyHtml = orders.length
+        ? orders.map(function(o) {
+            var itemsText = o.items.map(function(i) { return i.name + ' x' + i.qty; }).join(', ');
+            return '<div class="order-detail-row"><span>' + o.id + ' — ' + itemsText + '</span><span>' + formatRp(o.total) + ' · <span class="pill ' + o.status + '">' + statusLabel[o.status] + '</span></span></div>';
+        }).join('')
+        : '<p style="font-size:13px;color:var(--mid);padding:10px 0;">Belum ada riwayat order.</p>';
+
+    document.getElementById('orderDetailContent').innerHTML =
+        '<div class="order-detail-row"><span>Nama</span><span>' + c.name + '</span></div>' +
+        '<div class="order-detail-row"><span>Email</span><span>' + c.email + '</span></div>' +
+        '<div class="order-detail-row"><span>Bergabung</span><span>' + c.joined + '</span></div>' +
+        '<p style="font-size:12px;font-weight:500;margin-top:14px;margin-bottom:6px;color:var(--mid);text-transform:uppercase;letter-spacing:0.5px;">Riwayat Order</p>' +
+        historyHtml;
+
+    document.getElementById('orderModalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
     }
 
     // ══════════════════════════════════════════════
@@ -460,8 +491,96 @@
     var tbody = document.getElementById('reviewTable');
     tbody.innerHTML = ADMIN_REVIEWS.map(function(r) {
         var stars = '★★★★★☆☆☆☆☆'.slice(5 - r.rating, 10 - r.rating);
-        return '<tr><td>' + r.customer + '</td><td>' + r.product + '</td><td><span class="stars">' + stars + '</span></td><td>' + r.comment + '</td></tr>';
+        var hiddenPill = r.hidden ? '<span class="pill none">Disembunyikan</span>' : '<span class="pill active">Tampil</span>';
+        var replyHtml = r.reply
+        ? '<div style="margin-top:6px;font-size:12px;color:var(--gold);">↳ Balasan admin: ' + r.reply + '</div>'
+        : '';
+
+        return '<tr>' +
+        '<td>' + r.customer + '</td>' +
+        '<td>' + r.product + '</td>' +
+        '<td><span class="stars">' + stars + '</span></td>' +
+        '<td>' + r.comment + replyHtml + '</td>' +
+        '<td>' + hiddenPill + '</td>' +
+        '<td><div class="row-actions">' +
+            '<button class="icon-btn" title="Balas review" onclick="openReplyReview(' + r.id + ')">💬</button>' +
+            '<button class="icon-btn" title="' + (r.hidden ? 'Tampilkan' : 'Sembunyikan') + '" onclick="toggleHideReview(' + r.id + ')">' + (r.hidden ? '👁️' : '🙈') + '</button>' +
+            '<button class="icon-btn delete" title="Hapus" onclick="deleteReview(' + r.id + ')">🗑️</button>' +
+        '</div></td>' +
+        '</tr>';
     }).join('');
+    }
+
+    function openReplyReview(reviewId) {
+    var r = ADMIN_REVIEWS.find(function(x) { return x.id === reviewId; });
+    if (!r) return;
+
+    var reply = prompt('Balas review dari "' + r.customer + '":\n\n"' + r.comment + '"', r.reply || '');
+    if (reply === null) return; // dibatalkan
+
+    function apply() {
+        r.reply = reply.trim() || null;
+        renderReview();
+        showToast('Balasan untuk review "' + r.customer + '" disimpan ✅');
+    }
+
+    if (USE_BACKEND) {
+        fetch('api/admin/reviews.php?id=' + reviewId, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reply: reply.trim() })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) { if (data.success) apply(); else showToast('Gagal menyimpan balasan.'); })
+        .catch(function() { showToast('Terjadi kesalahan.'); });
+    } else {
+        apply();
+    }
+    }
+
+    function toggleHideReview(reviewId) {
+    var r = ADMIN_REVIEWS.find(function(x) { return x.id === reviewId; });
+    if (!r) return;
+
+    function apply() {
+        r.hidden = !r.hidden;
+        renderReview();
+        showToast(r.hidden ? 'Review disembunyikan dari publik.' : 'Review ditampilkan kembali.');
+    }
+
+    if (USE_BACKEND) {
+        fetch('api/admin/reviews.php?id=' + reviewId, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ hidden: !r.hidden })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) { if (data.success) apply(); else showToast('Gagal memperbarui review.'); })
+        .catch(function() { showToast('Terjadi kesalahan.'); });
+    } else {
+        apply();
+    }
+    }
+
+    function deleteReview(reviewId) {
+    var r = ADMIN_REVIEWS.find(function(x) { return x.id === reviewId; });
+    if (!r) return;
+    if (!confirm('Hapus review dari "' + r.customer + '"?')) return;
+
+    function apply() {
+        ADMIN_REVIEWS = ADMIN_REVIEWS.filter(function(x) { return x.id !== reviewId; });
+        renderReview();
+        showToast('Review dihapus.');
+    }
+
+    if (USE_BACKEND) {
+        fetch('api/admin/reviews.php?id=' + reviewId, { method: 'DELETE' })
+        .then(function(res) { return res.json(); })
+        .then(function(data) { if (data.success) apply(); else showToast('Gagal menghapus review.'); })
+        .catch(function() { showToast('Terjadi kesalahan.'); });
+    } else {
+        apply();
+    }
     }
 
     // ══════════════════════════════════════════════
